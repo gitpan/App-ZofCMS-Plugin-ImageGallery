@@ -1,0 +1,18 @@
+{
+    body => \'admin/photos.tmpl',
+    title => 'Photos - Admin',
+
+    plugins => [ qw/ImageGallery/, ],
+
+    plug_image_gallery => {
+        dsn         => "DBI:mysql:database=test;host=localhost",
+        user        => 'test',
+        pass        => 'test',
+        opt         => { RaiseError => 1, AutoCommit => 1 },
+        no_form     => 0,
+        no_list     => 0,
+        allow_edit  => 1,
+        photo_size  => { 600, 600 },
+        has_view => 1,
+    },
+}

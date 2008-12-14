@@ -1,0 +1,29 @@
+---
+name: App-ZofCMS-Plugin-ImageGallery
+version: 0.0101
+author:
+  - "Zoffix <'zoffix@cpan.org'>"
+abstract: CRUD-like plugin for managing images.
+license: perl
+resources:
+  license: http://dev.perl.org/licenses/
+requires:
+  App::ZofCMS: 0.0111
+  App::ZofCMS::Plugin::Base: 0.0102
+  DBI: 1.602
+  File::Copy: 2.09
+  File::Spec: 3.2701
+  HTML::Entities: 1.35
+  HTML::Template: 2.9
+  Image::Resize: 0.5
+  Image::Size: 3.100001
+build_requires:
+  Test::More: 0
+provides:
+  App::ZofCMS::Plugin::ImageGallery:
+    file: lib/App/ZofCMS/Plugin/ImageGallery.pm
+    version: 0.0101
+generated_by: Module::Build version 0.2808
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.2.html
+  version: 1.2
