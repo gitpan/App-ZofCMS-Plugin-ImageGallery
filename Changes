@@ -1,5 +1,11 @@
 Revision history for App-ZofCMS-Plugin-ImageGallery
 
+0.0201  December 14, 2008
+        Fixed a bug that caused src="" attributes in the thumb list to contain URIs to original
+        images and not thumbnails
+
+        Added support for "Lightbox" JS crap.
+
 0.0101  December 14, 2008
         First version, released on an unsuspecting world.
 
