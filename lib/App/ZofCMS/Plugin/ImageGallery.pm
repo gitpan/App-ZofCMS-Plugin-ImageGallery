@@ -3,7 +3,7 @@ package App::ZofCMS::Plugin::ImageGallery;
 use warnings;
 use strict;
 
-our $VERSION = '0.0201';
+our $VERSION = '0.0202';
 
 use base 'App::ZofCMS::Plugin::Base';
 use HTML::Template;
@@ -128,7 +128,7 @@ sub _do {
         }
 
         $t->param(
-            success_href => "/index.pl?page=$query->{page}&amp;dir=$query->{dir}",
+            success_href => "/index.pl?page=$query->{page}&dir=$query->{dir}",
             map +( $_ => $query->{$_} ),
                 qw/page dir plug_image_gallery_description/,
         );

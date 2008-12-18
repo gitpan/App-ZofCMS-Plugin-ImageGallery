@@ -1,5 +1,8 @@
 Revision history for App-ZofCMS-Plugin-ImageGallery
 
+0.0202  December 18, 2008
+        Fixed a bug that put two &amp;s in the "Upload another image" link
+
 0.0201  December 14, 2008
         Fixed a bug that caused src="" attributes in the thumb list to contain URIs to original
         images and not thumbnails
