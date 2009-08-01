@@ -3,7 +3,7 @@ package App::ZofCMS::Plugin::ImageGallery;
 use warnings;
 use strict;
 
-our $VERSION = '0.0202';
+our $VERSION = '0.0203';
 
 use base 'App::ZofCMS::Plugin::Base';
 use HTML::Template;
@@ -418,8 +418,8 @@ sub _list_template {
                             <input type="hidden" name="plug_image_gallery_id" value="<tmpl_var escape='html' name='id'>">
                             <input type="hidden" name="page" value="<tmpl_var escape='html' name='page'>">
                             <input type="hidden" name="dir" value="<tmpl_var escape='html' name='dir'>">
-                            <input type="submit" name="plug_image_gallery_action" value="Edit">
-                            <input type="submit" name="plug_image_gallery_action" value="Delete">
+                            <input type="submit" class="input_submit" name="plug_image_gallery_action" value="Edit">
+                            <input type="submit" class="input_submit" name="plug_image_gallery_action" value="Delete">
                         </div>
                         </form>
                     </tmpl_if>
@@ -554,11 +554,23 @@ You obviously need to include the plugin in the list of plugins to execute.
         lightbox_desc   => 1,
     }
 
+    plug_image_gallery => sub {
+        my ( $t, $q, $config ) = @_;
+        return {
+            dsn             => "DBI:mysql:database=test;host=localhost",
+        };
+    }
+
 The plugin takes its configuration from C<plug_image_gallery> first-level key that takes
-a hashref as a value and can be specified in either (or both) Main Config File and
+a hashref or a subref as a value and can be specified in either (or both) Main Config File and
 ZofCMS Template file. If the same key in that hashref is specified in both, Main Config File
 and ZofCMS Tempate file, then the value given to it in ZofCMS Template will take precedence.
-
+If subref is specified,
+its return value will be assigned to C<plug_image_gallery> as if it was already there. If sub returns
+an C<undef>, then plugin will stop further processing. The C<@_> of the subref will
+contain (in that order): ZofCMS Tempalate hashref, query parameters hashref and
+L<App::ZofCMS::Config> object.
+    
 The plugin will B<NOT> run if C<plug_image_gallery> is not set or if B<both> C<no_form>
 B<and> C<no_list> arguments (see below) are set to true values.
 
