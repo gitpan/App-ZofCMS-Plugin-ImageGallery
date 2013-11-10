@@ -23,7 +23,9 @@ my $builder = Module::Build->new(
         'File::Spec'                => 3.2701,
         'DBI'                       => 1.602,
         'HTML::Entities'            => 1.35,
+        'perl' => '5.006',
     },
+    configure_requires => { 'Module::Build' => 0 },
     add_to_cleanup      => [ 'App-ZofCMS-Plugin-ImageGallery-*' ],
     create_makefile_pl => 'traditional',
 );

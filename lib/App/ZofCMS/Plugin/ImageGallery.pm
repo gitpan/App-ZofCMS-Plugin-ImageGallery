@@ -3,7 +3,7 @@ package App::ZofCMS::Plugin::ImageGallery;
 use warnings;
 use strict;
 
-our $VERSION = '0.0203';
+our $VERSION = '0.0204';
 
 use base 'App::ZofCMS::Plugin::Base';
 use HTML::Template;
@@ -465,6 +465,8 @@ sub dbh {
 
 1;
 __END__
+
+=encoding utf8
 
 =head1 NAME
 
